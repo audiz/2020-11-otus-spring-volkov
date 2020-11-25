@@ -1,0 +1,6 @@
+Which of the following is not a Java features?;Dynamic;Architecture Neutral;Use of pointers;Object-oriented
+_____ is used to find and fix bugs in the Java programs.;JVM;JRE;JDK;JDB
+What is the return type of the hashCode() method in the Object class?
+Which of the following tool is used to generate API documentation in HTML format from doc comments in source code?;javap tool;javaw command;Javadoc tool;javah command
+Which of the following creates a List of 3 visible items and multiple selections abled?;new List(false, 3);new List(3, true);new List(true, 3);new List(3, false)
+
