@@ -26,14 +26,20 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public void askFio() {
+    public void doQuestions() {
+        askFio();
+        makeQuestions();
+        prepareResults();
+
+    }
+
+    private void askFio() {
         String firstName = inputService.getInput("What is your First Name?");
         String lastName = inputService.getInput("What is your Last Name?");
         System.out.println("Hello " + firstName + " " + lastName + "!");
     }
 
-    @Override
-    public void doQuestions() {
+    private void makeQuestions(){
         answeredList = new ArrayList<>();
         System.out.println("Please answer next questions: (use comma for multiple choice answers)");
 
@@ -55,8 +61,7 @@ public class QuestionServiceImpl implements QuestionService {
         }
     }
 
-    @Override
-    public void prepareResults() {
+    private void prepareResults() {
         double prc = answeredList.stream().mapToDouble(Question::getCorrectPercents).average().orElse(Double.NaN);
         System.out.println("Correct answers is " + prc + "%");
     }
