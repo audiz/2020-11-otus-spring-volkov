@@ -39,8 +39,8 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     private void askFio() {
-        String firstName = inputService.getInput(messageSource.getMessage("ru.otus.getFirstName", null, props.getLocale()));
-        String lastName = inputService.getInput(messageSource.getMessage("ru.otus.getLastName", null, props.getLocale()));
+        String firstName = inputService.getInput("ru.otus.getFirstName");
+        String lastName = inputService.getInput("ru.otus.getLastName");
         System.out.println(messageSource.getMessage("ru.otus.hello", new String[]{firstName, lastName}, props.getLocale()));
     }
 
@@ -53,13 +53,13 @@ public class QuestionServiceImpl implements QuestionService {
             question.setNumber(++questionNumber);
             System.out.println((question.getNumber()) + ") " + question.getQuestion());
             if(question.getAnswers().size() == 1) {
-                String answer = inputService.getInput(messageSource.getMessage("ru.otus.type_answer", null, props.getLocale()));
+                String answer = inputService.getInput("ru.otus.type_answer");
                 compareAnswers(answer, question.getAnswers());
             } else {
                 for(Answer answer: question.getAnswers()) {
                     System.out.println("\t" + answer.getNumber() + " - " + answer.getAnswer() +  " - " + answer.isCorrect());
                 }
-                String answer = inputService.getInput(messageSource.getMessage("ru.otus.your_answer", null, props.getLocale()));
+                String answer = inputService.getInput("ru.otus.your_answer");
                 compareAnswers(answer, question.getAnswers());
             }
             answeredList.add(question);
