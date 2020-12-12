@@ -23,7 +23,6 @@ public class InputServiceImpl implements InputService {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         try {
-
             System.out.println(messageSource.getMessage("ru.otus.getFirstName", null, props.getLocale()));
             return br.readLine().trim();
         } catch (IOException e) {
