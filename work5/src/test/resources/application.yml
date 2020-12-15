@@ -1,0 +1,8 @@
+ru:
+  otus:
+    questionSeparator: ;
+    locale: ru_RU
+spring:
+  shell:
+    interactive:
+      enabled: false
