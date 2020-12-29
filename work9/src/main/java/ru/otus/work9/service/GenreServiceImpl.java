@@ -3,6 +3,7 @@ package ru.otus.work9.service;
 import de.vandermeer.asciitable.AsciiTable;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import ru.otus.work9.domain.Genre;
 import ru.otus.work9.repositories.BookRepository;
 import ru.otus.work9.repositories.GenreRepository;
@@ -18,11 +19,8 @@ public class GenreServiceImpl implements GenreService {
     private final GenreRepository genreRepo;
 
     @Override
-    public String insertGenre(Long id, String name) {
-        if(genreRepo.findById(id).isPresent()){
-            return "Already exists";
-        }
-        genreRepo.insert(new Genre(id, name));
+    public String insertGenre(String name) {
+        genreRepo.insert(new Genre(0, name));
         return "Success";
     }
 

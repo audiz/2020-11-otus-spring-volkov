@@ -40,18 +40,18 @@ public class ApplicationEventsCommands {
 
 
     @ShellMethod(value = "Add genre", key = {"ig", "insert_genre"})
-    public String insertGenre(@ShellOption("--id") Long id, @ShellOption("--name") String name) {
-       return genreService.insertGenre(id, name);
+    public String insertGenre(@ShellOption("--name") String name) {
+       return genreService.insertGenre( name);
     }
 
     @ShellMethod(value = "Add author", key = {"ia", "insert_author"})
-    public String insertAuthor(@ShellOption("--id") Long id, @ShellOption("--name") String name) {
-        return authorService.insertAuthor(id, name);
+    public String insertAuthor(@ShellOption("--name") String name) {
+        return authorService.insertAuthor(name);
     }
 
     @ShellMethod(value = "Add book", key = {"ib", "insert_book"})
-    public String insertBook(@ShellOption("--id") Long id, @ShellOption("--title") String title, @ShellOption("--genre") Long genre, @ShellOption("--author") Long author) {
-        return bookService.insertBook(id, title, genre, author);
+    public String insertBook(@ShellOption("--title") String title, @ShellOption("--genre") Long genre, @ShellOption("--author") Long author) {
+        return bookService.insertBook(title, genre, author);
     }
 
     @ShellMethod(value = "Add comment", key = {"ic", "insert_comment"})

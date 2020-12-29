@@ -3,6 +3,7 @@ package ru.otus.work9.service;
 import de.vandermeer.asciitable.AsciiTable;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import ru.otus.work9.domain.Author;
 import ru.otus.work9.repositories.AuthorRepository;
 import ru.otus.work9.repositories.BookRepository;
@@ -17,11 +18,8 @@ public class AuthorServiceImpl implements AuthorService {
     private final AuthorRepository authorRepo;
 
     @Override
-    public String insertAuthor(Long id, String name) {
-        if(authorRepo.findById(id).isPresent()) {
-            return "Already exists";
-        }
-        authorRepo.insert(new Author(id, name));
+    public String insertAuthor(String name) {
+        authorRepo.insert(new Author(0, name));
         return "Success";
     }
 
@@ -33,11 +31,12 @@ public class AuthorServiceImpl implements AuthorService {
 
     @Override
     public String deleteAuthor(Long id) {
-        if(bookRepo.getCountAuthorById(id) > 0) {
-            return "You can't delete an author because books with him exist";
-        }
         if(authorRepo.findById(id).isEmpty()) {
             return "Author not found";
+        }
+        System.out.println("bookRepo.getCountAuthorById = " + bookRepo.getCountAuthorById(id));
+        if(bookRepo.getCountAuthorById(id) > 0) {
+            return "You can't delete an author because books with him exist";
         }
         int result = authorRepo.deleteById(id);
         if(result == 1) {

@@ -7,11 +7,11 @@ import java.util.Optional;
 
 public interface BookRepository {
     List<Book> getAll();
-    void insert(Book author);
+    void insert(Book book);
     Book update(Book book);
     Optional<Book> getFullById(long id);
     Optional<Book> findById(long id);
     int deleteById(long id);
-    int getCountGenreById(long id);
-    int getCountAuthorById(long id);
+    Long getCountGenreById(long id);
+    Long getCountAuthorById(long id);
 }

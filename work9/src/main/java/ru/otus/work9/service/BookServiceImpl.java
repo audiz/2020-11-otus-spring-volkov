@@ -62,10 +62,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public String insertBook(Long id, String title, Long genre, Long author) {
-        if(bookRepo.findById(id).isPresent()) {
-            return "Book already exists";
-        }
+    public String insertBook(String title, Long genre, Long author) {
         Optional<Genre> optionalGenre = genreRepo.findById(genre);
         if(optionalGenre.isEmpty()) {
             return "Genre not found";
@@ -74,13 +71,15 @@ public class BookServiceImpl implements BookService {
         if(optionalAuthor.isEmpty()) {
             return "Author not found";
         }
-        bookRepo.insert(new Book(id, title, optionalGenre.get(), optionalAuthor.get(), null));
+        bookRepo.insert(new Book(0, title, optionalGenre.get(), optionalAuthor.get(), null));
         return "Success";
     }
 
     @Override
     public String updateBook(Long id, String title, Long genre, Long author) {
-        if(bookRepo.findById(id).isEmpty()) {
+        Optional<Book> optionalBook = bookRepo.findById(id);
+
+        if(optionalBook.isEmpty()) {
             return "Book not found";
         }
         Optional<Genre> genreDaoById = genreRepo.findById(genre);
@@ -91,7 +90,12 @@ public class BookServiceImpl implements BookService {
         if(authorDaoById.isEmpty()) {
             return "Author not found";
         }
-        bookRepo.update(new Book(id, title, genreDaoById.get(), authorDaoById.get(), null));
+
+        optionalBook.get().setTitle(title);
+        optionalBook.get().setGenre(genreDaoById.get());
+        optionalBook.get().setAuthor(authorDaoById.get());
+
+        bookRepo.update(optionalBook.get());
         return "Success";
     }
 }

@@ -11,6 +11,7 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
 
+@Transactional
 @Repository
 public class BookRepositoryImpl implements BookRepository {
 
@@ -56,16 +57,16 @@ public class BookRepositoryImpl implements BookRepository {
     }
 
     @Override
-    public int getCountGenreById(long id) {
-        Query query =  em.createQuery("select count(s) from Book s inner join s.genre c where c.id = :id");
+    public Long getCountGenreById(long id) {
+        TypedQuery<Long> query = em.createQuery("select count(s) from Book s where s.genre.id = :id", Long.class);
         query.setParameter("id", id);
-        return query.getFirstResult();
+        return query.getSingleResult();
     }
 
     @Override
-    public int getCountAuthorById(long id) {
-        Query query =  em.createQuery("select count(s) from Book s inner join s.author c where c.id = :id");
+    public Long getCountAuthorById(long id) {
+        TypedQuery<Long> query = em.createQuery("select count(s) from Book s where s.author.id = :id", Long.class);
         query.setParameter("id", id);
-        return query.getFirstResult();
+        return query.getSingleResult();
     }
 }

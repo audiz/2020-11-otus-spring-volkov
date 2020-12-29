@@ -11,4 +11,6 @@ insert into books (id, `title`, `genre`, `author`) values
     (1, 'Nineteen Eighty-Four', 1, 1),
     (2, 'Brave New World', 1, 2);
 
-
+insert into comments (id, `comment`, `book_id`) values
+    (1, 'Very well!!!', 1),
+    (2, 'Not bad', 1);

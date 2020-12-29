@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface AuthorRepository {
     List<Author> getAll();
     void insert(Author author);
-    Author update(Author book);
+    Author update(Author author);
     Optional<Author> findById(long id);
     int deleteById(long id);
 }

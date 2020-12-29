@@ -7,8 +7,8 @@ import java.util.Optional;
 
 public interface GenreRepository {
     List<Genre> getAll();
-    void insert(Genre author);
-    Genre update(Genre book);
+    void insert(Genre genre);
+    Genre update(Genre genre);
     Optional<Genre> findById(long id);
     int deleteById(long id);
 }
