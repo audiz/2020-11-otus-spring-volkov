@@ -5,6 +5,8 @@ import ru.otus.work9.domain.Comment;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -12,6 +14,12 @@ public class CommentRepositoryImpl implements CommentRepository {
 
     @PersistenceContext
     private EntityManager em;
+
+    @Override
+    public List<Comment> getAll() {
+        TypedQuery<Comment> query = em.createQuery("select s from Comment s", Comment.class);
+        return query.getResultList();
+    }
 
     @Override
     public void insert(Comment comment) {

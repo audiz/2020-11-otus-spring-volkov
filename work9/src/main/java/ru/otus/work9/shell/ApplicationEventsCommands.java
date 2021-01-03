@@ -19,7 +19,7 @@ public class ApplicationEventsCommands {
     private final CommentService commentService;
 
     @ShellMethod(value = "List comments", key = {"lc", "list_comments"})
-    public String listComments(@ShellOption("--id") Long id) {
+    public String listComments(@ShellOption(value = "--id", defaultValue = "0") Long id) {
         return commentService.listComments(id);
     }
 

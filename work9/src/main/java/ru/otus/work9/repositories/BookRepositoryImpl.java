@@ -3,10 +3,7 @@ package ru.otus.work9.repositories;
 import org.springframework.stereotype.Repository;
 import ru.otus.work9.domain.Book;
 
-import javax.persistence.EntityGraph;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
 import java.util.List;
 import java.util.Optional;
 
@@ -49,6 +46,9 @@ public class BookRepositoryImpl implements BookRepository {
 
     @Override
     public void delete(Book book) {
+        //Query query = em.createQuery("delete from Book s where s.id = :id");
+        //query.setParameter("id", book.getId());
+        //query.executeUpdate();
         em.remove(book);
     }
 

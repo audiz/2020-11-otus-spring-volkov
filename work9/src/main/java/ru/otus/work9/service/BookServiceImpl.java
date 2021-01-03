@@ -27,7 +27,7 @@ public class BookServiceImpl implements BookService {
     @Transactional
     @Override
     public String deleteBook(Long id) {
-        Optional<Book> book = bookRepo.findById(id);
+        Optional<Book> book = bookRepo.getFullById(id);
         if(book.isEmpty()) {
             return "Book not found";
         }

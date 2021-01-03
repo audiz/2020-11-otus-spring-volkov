@@ -23,11 +23,17 @@ public class CommentServiceImpl implements CommentService{
     @Transactional
     @Override
     public String listComments(Long id) {
-        Optional<Book> optionalBook = bookRepository.getFullById(id);
-        if(optionalBook.isEmpty()){
-            return "Not found";
+        List<Comment> comments;
+        if(id == 0){
+            comments = commentRepository.getAll();
+        } else {
+            Optional<Book> optionalBook = bookRepository.getFullById(id);
+            if(optionalBook.isEmpty()){
+                return "Not found";
+            }
+            comments = optionalBook.get().getComments();
         }
-        List<Comment> comments = optionalBook.get().getComments();
+
         AsciiTable at = new AsciiTable();
         at.addRule();
         at.addRow("ID", "COMMENT");
