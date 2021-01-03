@@ -34,10 +34,10 @@ public class BookRepositoryImpl implements BookRepository {
 
     @Override
     public Optional<Book> getFullById(long id) {
-        TypedQuery<Book> query = em.createQuery("select s from Book s join fetch s.genre where s.id = :id", Book.class);
+        TypedQuery<Book> query = em.createQuery("select s from Book s where s.id = :id", Book.class);
         query.setParameter("id", id);
 
-        EntityGraph<?> entityGraph = em.getEntityGraph("author-entity-graph");
+        EntityGraph<?> entityGraph = em.getEntityGraph("entity-graph");
         query.setHint("javax.persistence.fetchgraph", entityGraph);
         return Optional.ofNullable(query.getSingleResult());
     }

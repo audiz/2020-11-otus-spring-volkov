@@ -29,7 +29,6 @@ public class Comment {
         return "Comment{" +
                 "id=" + id +
                 ", comment='" + comment + '\'' +
-                ", bookTitle=" + book.getTitle() +
                 '}';
     }
 }

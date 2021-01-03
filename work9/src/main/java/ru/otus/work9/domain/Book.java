@@ -3,15 +3,13 @@ package ru.otus.work9.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.BatchSize;
-import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.List;
 
-@NamedEntityGraph(name = "author-entity-graph", attributeNodes = {@NamedAttributeNode("author")})
+@NamedEntityGraph(name = "entity-graph", attributeNodes = { @NamedAttributeNode("author"), @NamedAttributeNode("genre") })
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -25,11 +23,11 @@ public class Book {
     @Column(name = "title", nullable = false, unique = true)
     private String title;
 
-    @OneToOne(targetEntity = Genre.class, cascade = CascadeType.REFRESH)
+    @ManyToOne(targetEntity = Genre.class, cascade = CascadeType.REFRESH)
     @JoinColumn(name = "genre", referencedColumnName = "id")
     private Genre genre;
 
-    @OneToOne(targetEntity = Author.class, cascade = CascadeType.REFRESH)
+    @ManyToOne(targetEntity = Author.class, cascade = CascadeType.REFRESH)
     @JoinColumn(name = "author", referencedColumnName = "id")
     private Author author;
 
