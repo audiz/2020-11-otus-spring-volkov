@@ -11,5 +11,5 @@ public interface AuthorRepository {
     void insert(Author author);
     Author update(Author author);
     Optional<Author> findById(long id);
-    int deleteById(long id);
+    void delete(Author author);
 }

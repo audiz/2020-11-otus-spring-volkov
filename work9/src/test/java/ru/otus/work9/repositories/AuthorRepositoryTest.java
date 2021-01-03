@@ -62,9 +62,8 @@ public class AuthorRepositoryTest {
     void shouldDeleteAuthorById() {
         val deleteAuthor = em.find(Author.class, 3L);
         assertThat(deleteAuthor).isNotNull();
-        em.detach(deleteAuthor);
 
-        authorRepository.deleteById(3L);
+        authorRepository.delete(deleteAuthor);
         val deletedAuthor = em.find(Author.class, 3L);
 
         assertThat(deletedAuthor).isNull();

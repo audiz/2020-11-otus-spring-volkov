@@ -62,9 +62,8 @@ public class GenreRepositoryTest {
     void shouldDeleteGenreById() {
         val deleteGenre = em.find(Genre.class, 2L);
         assertThat(deleteGenre).isNotNull();
-        em.detach(deleteGenre);
 
-        genreRepository.deleteById(2L);
+        genreRepository.delete(deleteGenre);
         val deletedGenre = em.find(Genre.class, 2L);
 
         assertThat(deletedGenre).isNull();

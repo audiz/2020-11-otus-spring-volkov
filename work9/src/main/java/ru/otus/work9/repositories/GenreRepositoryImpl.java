@@ -12,7 +12,6 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
 
-@Transactional
 @Repository
 public class GenreRepositoryImpl implements GenreRepository {
 
@@ -41,9 +40,7 @@ public class GenreRepositoryImpl implements GenreRepository {
     }
 
     @Override
-    public int deleteById(long id) {
-        Query query = em.createQuery("delete from Genre s where s.id = :id");
-        query.setParameter("id", id);
-        return query.executeUpdate();
+    public void delete(Genre genre) {
+        em.remove(genre);
     }
 }

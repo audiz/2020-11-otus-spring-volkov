@@ -68,9 +68,8 @@ public class BookRepositoryTest {
     void shouldDeleteBookById() {
         val deleteBook = em.find(Book.class, 2L);
         assertThat(deleteBook).isNotNull();
-        em.detach(deleteBook);
 
-        bookRepository.deleteById(2L);
+        bookRepository.delete(deleteBook);
         val deletedBook = em.find(Book.class, 2L);
 
         assertThat(deletedBook).isNull();

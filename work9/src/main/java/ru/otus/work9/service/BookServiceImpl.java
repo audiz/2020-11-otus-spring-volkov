@@ -24,16 +24,15 @@ public class BookServiceImpl implements BookService {
     private final GenreRepository genreRepo;
     private final CommentRepository commentRepo;
 
+    @Transactional
     @Override
     public String deleteBook(Long id) {
-        if(bookRepo.findById(id).isEmpty()) {
+        Optional<Book> book = bookRepo.findById(id);
+        if(book.isEmpty()) {
             return "Book not found";
         }
-        int result = bookRepo.deleteById(id);
-        if(result == 1) {
-            return "Book deleted";
-        }
-        return "Can't delete";
+        bookRepo.delete(book.get());
+        return "Book deleted";
     }
 
     @Override
@@ -61,6 +60,7 @@ public class BookServiceImpl implements BookService {
         }
     }
 
+    @Transactional
     @Override
     public String insertBook(String title, Long genre, Long author) {
         Optional<Genre> optionalGenre = genreRepo.findById(genre);
@@ -75,6 +75,7 @@ public class BookServiceImpl implements BookService {
         return "Success";
     }
 
+    @Transactional
     @Override
     public String updateBook(Long id, String title, Long genre, Long author) {
         Optional<Book> optionalBook = bookRepo.findById(id);

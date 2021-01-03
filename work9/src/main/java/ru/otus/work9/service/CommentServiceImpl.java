@@ -3,6 +3,7 @@ package ru.otus.work9.service;
 import de.vandermeer.asciitable.AsciiTable;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import ru.otus.work9.domain.Book;
 import ru.otus.work9.domain.Comment;
 import ru.otus.work9.domain.Genre;
@@ -19,20 +20,26 @@ public class CommentServiceImpl implements CommentService{
     private final CommentRepository commentRepository;
     private final BookRepository bookRepository;
 
+    @Transactional
     @Override
     public String listComments(Long id) {
-        List<Comment> genres = commentRepository.getAllByBookId(id);
+        Optional<Book> optionalBook = bookRepository.getFullById(id);
+        if(optionalBook.isEmpty()){
+            return "Not found";
+        }
+        List<Comment> comments = optionalBook.get().getComments();
         AsciiTable at = new AsciiTable();
         at.addRule();
         at.addRow("ID", "COMMENT");
         at.addRule();
-        genres.forEach(genre -> {
+        comments.forEach(genre -> {
             at.addRow(genre.getId(), genre.getComment());
             at.addRule();
         });
         return at.render();
     }
 
+    @Transactional
     @Override
     public String insertComment(Long bookId, String comment) {
         Optional<Book> optionalBook = bookRepository.findById(bookId);
@@ -43,6 +50,7 @@ public class CommentServiceImpl implements CommentService{
         return "Success";
     }
 
+    @Transactional
     @Override
     public String updateComment(Long id, String comment) {
         Optional<Comment> optionalComment = commentRepository.findById(id);
@@ -54,15 +62,14 @@ public class CommentServiceImpl implements CommentService{
         return "Comment updated";
     }
 
+    @Transactional
     @Override
     public String deleteComment(Long id) {
-        if(commentRepository.findById(id).isEmpty()) {
+        Optional<Comment> comment = commentRepository.findById(id);
+        if(comment.isEmpty()) {
             return "Comment not found";
         }
-        int result = commentRepository.deleteById(id);
-        if(result == 1) {
-            return "Comment deleted";
-        }
-        return "Can't delete";
+        commentRepository.delete(comment.get());
+        return "Comment deleted";
     }
 }

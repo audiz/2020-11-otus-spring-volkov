@@ -20,7 +20,16 @@ public class Comment {
     private String comment;
 
     //@Column(name = "book_id", nullable = false)
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.DETACH)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "book_id", referencedColumnName = "id")
-    private Book bookId;
+    private Book book;
+
+    @Override
+    public String toString() {
+        return "Comment{" +
+                "id=" + id +
+                ", comment='" + comment + '\'' +
+                ", bookTitle=" + book.getTitle() +
+                '}';
+    }
 }

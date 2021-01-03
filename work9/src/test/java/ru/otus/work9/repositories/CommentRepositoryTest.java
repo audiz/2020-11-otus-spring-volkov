@@ -68,9 +68,8 @@ public class CommentRepositoryTest {
     void shouldDeleteCommentById() {
         val deleteComment = em.find(Comment.class, 2L);
         assertThat(deleteComment).isNotNull();
-        em.detach(deleteComment);
 
-        commentRepository.deleteById(2L);
+        commentRepository.delete(deleteComment);
         val deletedComment = em.find(Comment.class, 2L);
 
         assertThat(deletedComment).isNull();

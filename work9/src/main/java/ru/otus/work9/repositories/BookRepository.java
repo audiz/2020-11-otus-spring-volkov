@@ -11,7 +11,7 @@ public interface BookRepository {
     Book update(Book book);
     Optional<Book> getFullById(long id);
     Optional<Book> findById(long id);
-    int deleteById(long id);
-    Long getCountGenreById(long id);
-    Long getCountAuthorById(long id);
+    void delete(Book book);
+    Long getCountByGenreId(long id);
+    Long getCountByAuthorId(long id);
 }

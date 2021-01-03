@@ -18,12 +18,14 @@ public class GenreServiceImpl implements GenreService {
     private final BookRepository bookRepo;
     private final GenreRepository genreRepo;
 
+    @Transactional
     @Override
     public String insertGenre(String name) {
         genreRepo.insert(new Genre(0, name));
         return "Success";
     }
 
+    @Transactional
     @Override
     public String updateGenre(Long id, String name) {
         if(genreRepo.findById(id).isEmpty()) {
@@ -33,19 +35,19 @@ public class GenreServiceImpl implements GenreService {
         return "Genre updated";
     }
 
+    @Transactional
     @Override
     public String deleteGenre(Long id) {
-        if(bookRepo.getCountGenreById(id) > 0) {
+
+        if(bookRepo.getCountByGenreId(id) > 0) {
             return "You can't delete an genre because books with it exist";
         }
-        if(genreRepo.findById(id).isEmpty()) {
+        Optional<Genre> genre = genreRepo.findById(id);
+        if(genre.isEmpty()) {
             return "Genre not found";
         }
-        int result = genreRepo.deleteById(id);
-        if(result == 1) {
-            return "Genre deleted";
-        }
-        return "Can't delete";
+        genreRepo.delete(genre.get());
+        return "Genre deleted";
     }
 
     @Override
