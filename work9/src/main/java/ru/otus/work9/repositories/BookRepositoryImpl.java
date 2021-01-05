@@ -34,7 +34,7 @@ public class BookRepositoryImpl implements BookRepository {
         TypedQuery<Book> query = em.createQuery("select s from Book s where s.id = :id", Book.class);
         query.setParameter("id", id);
 
-        EntityGraph<?> entityGraph = em.getEntityGraph("entity-graph");
+        EntityGraph<?> entityGraph = em.getEntityGraph("author-and-genre-entity-graph");
         query.setHint("javax.persistence.fetchgraph", entityGraph);
         return Optional.ofNullable(query.getSingleResult());
     }
@@ -46,9 +46,6 @@ public class BookRepositoryImpl implements BookRepository {
 
     @Override
     public void delete(Book book) {
-        //Query query = em.createQuery("delete from Book s where s.id = :id");
-        //query.setParameter("id", book.getId());
-        //query.executeUpdate();
         em.remove(book);
     }
 

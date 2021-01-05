@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import ru.otus.work9.domain.Book;
 import ru.otus.work9.domain.Comment;
-import ru.otus.work9.domain.Genre;
 import ru.otus.work9.repositories.BookRepository;
 import ru.otus.work9.repositories.CommentRepository;
 
@@ -20,14 +19,14 @@ public class CommentServiceImpl implements CommentService{
     private final CommentRepository commentRepository;
     private final BookRepository bookRepository;
 
-    @Transactional
+    @Transactional(readOnly = true)
     @Override
-    public String listComments(Long id) {
+    public String listComments(Long bookId) {
         List<Comment> comments;
-        if(id == 0){
+        if(bookId == 0) {
             comments = commentRepository.getAll();
         } else {
-            Optional<Book> optionalBook = bookRepository.getFullById(id);
+            Optional<Book> optionalBook = bookRepository.getFullById(bookId);
             if(optionalBook.isEmpty()){
                 return "Not found";
             }

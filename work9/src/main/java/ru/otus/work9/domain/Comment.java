@@ -3,8 +3,7 @@ package ru.otus.work9.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -21,16 +20,9 @@ public class Comment {
     @Column(name = "comment", nullable = false)
     private String comment;
 
+    @ToString.Exclude
     //@Column(name = "book_id", nullable = false)
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "book_id", referencedColumnName = "id")
     private Book book;
-
-    @Override
-    public String toString() {
-        return "Comment{" +
-                "id=" + id +
-                ", comment='" + comment + '\'' +
-                '}';
-    }
 }
