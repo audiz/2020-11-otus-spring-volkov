@@ -27,7 +27,12 @@ public class AuthorServiceImpl implements AuthorService {
     @Transactional
     @Override
     public String updateAuthor(Long id, String name) {
-        Author author = authorRepo.update(new Author(id, name));
+        Optional<Author> author = authorRepo.findById(id);
+        if(author.isEmpty()) {
+            return "Author not found";
+        }
+        author.get().setName(name);
+        authorRepo.update(author.get());
         return "Author updated = " + author;
     }
 
@@ -37,10 +42,6 @@ public class AuthorServiceImpl implements AuthorService {
         Optional<Author> author = authorRepo.findById(id);
         if(author.isEmpty()) {
             return "Author not found";
-        }
-        System.out.println("bookRepo.getCountAuthorById = " + bookRepo.getCountByAuthorId(id));
-        if(bookRepo.getCountByAuthorId(id) > 0) {
-            return "You can't delete an author because books with him exist";
         }
         authorRepo.delete(author.get());
         return "Author deleted";

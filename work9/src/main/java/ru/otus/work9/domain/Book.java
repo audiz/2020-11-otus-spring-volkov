@@ -9,7 +9,7 @@ import org.hibernate.annotations.FetchMode;
 import javax.persistence.*;
 import java.util.List;
 
-@NamedEntityGraph(name = "entity-graph", attributeNodes = { @NamedAttributeNode("author"), @NamedAttributeNode("genre") })
+@NamedEntityGraph(name = "author-and-genre-entity-graph", attributeNodes = { @NamedAttributeNode("author"), @NamedAttributeNode("genre") })
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

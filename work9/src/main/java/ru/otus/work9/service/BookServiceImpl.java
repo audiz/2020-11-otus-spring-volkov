@@ -9,7 +9,6 @@ import ru.otus.work9.domain.Book;
 import ru.otus.work9.domain.Genre;
 import ru.otus.work9.repositories.AuthorRepository;
 import ru.otus.work9.repositories.BookRepository;
-import ru.otus.work9.repositories.CommentRepository;
 import ru.otus.work9.repositories.GenreRepository;
 
 import java.util.List;
@@ -22,7 +21,6 @@ public class BookServiceImpl implements BookService {
     private final BookRepository bookRepo;
     private final AuthorRepository authorRepo;
     private final GenreRepository genreRepo;
-    private final CommentRepository commentRepo;
 
     @Transactional
     @Override
