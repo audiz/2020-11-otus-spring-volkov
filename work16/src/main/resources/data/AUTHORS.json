@@ -1,0 +1,2 @@
+{"_id":{"$numberLong":"1"},"name":"George Orwell","_class":"ru.otus.work16.domain.Author"}
+{"_id":{"$numberLong":"2"},"name":"Aldous Huxley","_class":"ru.otus.work16.domain.Author"}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>List of all books</title>
+    <style type="text/css">
+        body {
+            padding: 50px;
+        }
+
+        .books, .books td {
+            border: 1px solid lightgray;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div th:insert="menu">...</div>
+
+<h1>Books:</h1>
+
+<a href="/books/new">New book</a>
+<table class="books">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th>Comments</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book:${books}">
+        <td th:text="${book.getId()}">1</td>
+        <td><a th:text="${book.getTitle()}" th:href="@{/books/{id}(id=${book.getId()})}" href="showBook.html">Book title</a></td>
+        <td th:text="${book.getAuthor().getName()}">Author</td>
+        <td th:text="${book.getGenre().getName()}">Genre</td>
+        <td th:text="${book.getComments().size()}">size</td>
+        <td>
+            <a th:href="@{/books/{id}/edit(id=${book.getId()})}" href="editBook.html">Edit</a>
+        </td>
+        <td>
+            <a th:href="@{/books/{id}/delete(id=${book.getId()})}" href="deleteBook.html">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

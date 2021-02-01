@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Show Book</title>
+    <style type="text/css">
+        body {
+            padding: 50px;
+        }
+
+        label {
+            display: inline-block;
+            width: 100px;
+        }
+
+        input:read-only {
+            background: lightgray;
+        }
+
+        .row {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<div th:insert="menu">...</div>
+
+<body th:object="${book}" >
+
+    <h1>Book Info:</h1>
+
+    <div class="row">
+        <span>ID:</span>
+        <span th:text="*{getId()}">Id</span>
+    </div>
+
+    <div class="row">
+        <span>Title:</span>
+        <span th:text="*{getTitle()}">Title</span>
+    </div>
+
+    <div class="row">
+        <span>Author:</span>
+        <span th:text="*{getAuthor().getName()}">Author</span>
+    </div>
+
+    <div class="row">
+        <span>Genre:</span>
+        <span th:text="*{getGenre().getName()}">Genre</span>
+    </div>
+
+    <div class="row"  th:if="*{!getComments().isEmpty()}">
+        <div>Comments:</div>
+        <div th:each="comment:*{getComments()}">
+            <span th:text="${comment.getId()}">id</span>) <span th:text="${comment.getComment()}">comment</span>
+        </div>
+    </div>
+
+
+    <form id="add-comment" action="addComment.html" th:action="@{/comments/save}" method="post">
+
+        <input name="bookId" type="hidden" value="" th:value="${book.id}"/>
+        <div class="row">
+            <label for="holder-input">New comment:</label>
+            <input id="holder-input" name="comment" type="text" value=""/>
+        </div>
+
+        <div class="row">
+            <button type="submit">Add</button>
+        </div>
+
+    </form>
+
+</body>
+</html>
