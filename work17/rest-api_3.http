@@ -1,0 +1,42 @@
+GET http://localhost:8080/api/books
+
+###
+
+GET http://localhost:8080/api/books/1
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "1984",
+  "genre": {"id": 2, "name": "Science Fiction"},
+  "author": {"id": 1, "name": "George Orwell"}
+}
+
+###
+
+PUT http://localhost:8080/api/books/3
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "1985",
+  "genre": {
+    "id": 1,
+    "name": "Science Fiction"
+  },
+  "author": {
+    "id": 1,
+    "name": "George Orwell"
+  }
+}
+
+###
+DELETE http://localhost:8080/api/books/1
+
+###
+
+
