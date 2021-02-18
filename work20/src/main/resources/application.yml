@@ -1,0 +1,12 @@
+spring:
+  data:
+    mongodb:
+      port: 0
+      database: library
+      #uri: mongodb://localhost:27017/db
+
+mongock:
+  runner-type: "ApplicationRunner" # default
+  #runner-type: "InitializingBean"
+  change-logs-scan-package:
+    - ru.otus.work20.changelog
