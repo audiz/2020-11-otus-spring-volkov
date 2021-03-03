@@ -1,0 +1,2 @@
+{"_id":{"$numberLong":"1"},"name":"Science Fiction","_class":"ru.otus.work17.domain.Genre"}
+{"_id":{"$numberLong":"2"},"name":"Novel","_class":"ru.otus.work17.domain.Genre"}
