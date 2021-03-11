@@ -1,0 +1,13 @@
+spring:
+  data:
+    mongodb:
+      port: 0
+      database: library
+      #uri: mongodb://localhost:27017/db
+      # comment flapdoodle dependency
+
+mongock:
+  runner-type: "ApplicationRunner" # default
+  #runner-type: "InitializingBean"
+  change-logs-scan-package:
+    - ru.otus.work25.changelog

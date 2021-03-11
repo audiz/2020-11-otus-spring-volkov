@@ -1,0 +1,4 @@
+{"_id":{"$numberLong":"1"},"title":"Nineteen Eighty-Four","genre":{"_id":{"$numberLong":"1"},"name":"Science Fiction"},"author":{"_id":{"$numberLong":"1"},"name":"George Orwell"},"comments":[{"$ref":"COMMENTS","$id":{"$numberLong":"1"}},{"$ref":"COMMENTS","$id":{"$numberLong":"2"}}],"_class":"ru.otus.work25.domain.Book"}
+{"_id":{"$numberLong":"2"},"title":"Brave New World","genre":{"_id":{"$numberLong":"1"},"name":"Science Fiction"},"author":{"_id":{"$numberLong":"2"},"name":"Aldous Huxley"},"_class":"ru.otus.work25.domain.Book"}
+{"_id":{"$numberLong":"3"},"title":"After Many a Summer","genre":{"_id":{"$numberLong":"2"},"name":"Novel"},"author":{"_id":{"$numberLong":"2"},"name":"Aldous Huxley"},"_class":"ru.otus.work25.domain.Book"}
+{"_id":{"$numberLong":"4"},"title":"Time Must Have a Stop","genre":{"_id":{"$numberLong":"2"},"name":"Novel"},"author":{"_id":{"$numberLong":"2"},"name":"Aldous Huxley"},"_class":"ru.otus.work25.domain.Book"}

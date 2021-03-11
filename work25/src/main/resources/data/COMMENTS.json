@@ -1,0 +1,2 @@
+{"_id":{"$numberLong":"1"},"comment":"Very well!!!","book":{"$ref":"BOOKS","$id":{"$numberLong":"1"}},"_class":"ru.otus.work17.domain.Comment"}
+{"_id":{"$numberLong":"2"},"comment":"Not bad","book":{"$ref":"BOOKS","$id":{"$numberLong":"1"}},"_class":"ru.otus.work17.domain.Comment"}

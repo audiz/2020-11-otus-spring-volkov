@@ -1,0 +1,28 @@
+GET http://localhost:8080/api/genres
+
+###
+
+POST http://localhost:8080/api/genres
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Distopia"
+}
+
+###
+
+PUT http://localhost:8080/api/genres/3
+Content-Type: application/json
+
+{
+"id": 1,
+"name": "Cyberpunk"
+}
+
+###
+DELETE http://localhost:8080/api/genres/5
+
+###
+
+

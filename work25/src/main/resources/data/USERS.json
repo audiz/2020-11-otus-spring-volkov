@@ -1,0 +1,4 @@
+{"_id":{"$numberLong":"1"},"username":"user","password":"user","roles": ["USER"],"_class":"ru.otus.work25.domain.User"}
+{"_id":{"$numberLong":"2"},"username":"admin","password":"admin","roles": ["ADMIN", "USER"],"_class":"ru.otus.work25.domain.User"}
+{"_id":{"$numberLong":"3"},"username":"sysadmin","password":"sysadmin","roles": ["ADMIN", "USER"],"_class":"ru.otus.work25.domain.User"}
+{"_id":{"$numberLong":"4"},"username":"editor","password":"editor","roles": ["USER"],"_class":"ru.otus.work25.domain.User"}
