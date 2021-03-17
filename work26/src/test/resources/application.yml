@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    initialization-mode: always
+  shell:
+    interactive:
+      enabled: false
+
+  batch:
+    job:
+      enabled: false
+
+  data:
+    mongodb:
+      port: 0
+      database: library
+
+mongock:
+  runner-type: "ApplicationRunner" # default
+  #runner-type: "InitializingBean"
+  change-logs-scan-package:
+    - ru.otus.work26.changelog
