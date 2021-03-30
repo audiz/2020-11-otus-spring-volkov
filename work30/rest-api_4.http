@@ -1,0 +1,76 @@
+GET http://localhost:8080/api/books/1/comments
+
+###
+
+GET http://localhost:8080/api/books/1/comments/1
+
+###
+
+POST http://localhost:8080/api/books/1/comments
+Content-Type: application/json
+
+{
+  "comment": "New comment"
+}
+
+###
+
+
+PUT http://localhost:8080/api/books/1/comments/3
+Content-Type: application/json
+
+{
+  "comment": "New comment!!!"
+}
+
+###
+
+DELETE http://localhost:8080/api/books/1/comments/8
+
+###
+
+DELETE http://localhost:8080/api/comments/2
+
+###
+
+GET http://localhost:8080/datarest/books/1/comments
+
+###
+
+GET http://localhost:8080/datarest/comments
+
+###
+
+POST http://localhost:8080/datarest/comments
+Content-Type: application/json
+
+{
+  "comment": "New comment",
+  "book": "/datarest/books/1"
+}
+
+###
+
+POST http://localhost:8080/datarest/books/1/comments
+Content-Type: application/json
+
+{
+  "comment": "New comment"
+}
+
+###
+
+POST http://localhost:8080/datarest/comments
+Content-Type: application/json
+
+{
+  "comment": "New comment",
+  "book": {
+    "id": 1
+  }
+}
+
+###
+DELETE http://localhost:8080/datarest/comments/3
+
+###

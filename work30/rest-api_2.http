@@ -1,0 +1,53 @@
+GET http://localhost:8080/api/genres
+
+###
+
+POST http://localhost:8080/api/genres
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Distopia"
+}
+
+###
+
+PUT http://localhost:8080/api/genres/3
+Content-Type: application/json
+
+{
+"id": 1,
+"name": "Cyberpunk"
+}
+
+###
+GET http://localhost:8080/datarest/genres
+
+
+###
+DELETE http://localhost:8080/api/genres/5
+
+###
+
+
+POST http://localhost:8080/datarest/genres
+Content-Type: application/json
+
+{
+  "name": "Distopia"
+}
+
+###
+
+PUT http://localhost:8080/datarest/genres/6
+Content-Type: application/json
+
+{
+  "name": "234234234"
+}
+
+###
+
+DELETE http://localhost:8080/datarest/genres/6
+
+###
