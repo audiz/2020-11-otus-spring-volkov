@@ -1,0 +1,36 @@
+spring:
+  data:
+    mongodb:
+      port: 0
+      database: library
+      #uri: mongodb://localhost:27017/db
+    rest:
+      basePath: /datarest
+
+logging:
+  file:
+    name: restservice.log
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} %m%n%wEx"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+      group:
+        custom:
+          include: booksHealth,mongo
+  health:
+    defaults:
+      enabled: true
+
+
+mongock:
+  runner-type: "ApplicationRunner" # default
+  #runner-type: "InitializingBean"
+  change-logs-scan-package:
+    - ru.otus.work30.changelog
