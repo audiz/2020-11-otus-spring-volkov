@@ -1,0 +1,166 @@
+server:
+  port: 9080
+
+spring:
+  application.name: resilience4j-work35
+  jackson.serialization.indent_output: true
+  data:
+    mongodb:
+      #port: 0
+      database: library
+      uri: mongodb://localhost:27017/db
+
+mongock:
+  runner-type: "ApplicationRunner" # default
+  #runner-type: "InitializingBean"
+  change-logs-scan-package:
+    - ru.otus.work35.changelog
+
+logging:
+  file:
+    path: /log/app.log
+
+management.endpoints.web.exposure.include: '*'
+management.endpoint.health.show-details: always
+
+management.health.diskspace.enabled: false
+management.health.circuitbreakers.enabled: true
+management.health.ratelimiters.enabled: false
+
+management.metrics.tags.application: ${spring.application.name}
+management.metrics.distribution.percentiles-histogram.http.server.requests: true
+management.metrics.distribution.percentiles-histogram.resilience4j.circuitbreaker.calls: true
+
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      registerHealthIndicator: true
+      slidingWindowSize: 10
+      minimumNumberOfCalls: 5
+      permittedNumberOfCallsInHalfOpenState: 3
+      automaticTransitionFromOpenToHalfOpenEnabled: true
+      waitDurationInOpenState: 5s
+      failureRateThreshold: 50
+      eventConsumerBufferSize: 10
+      recordExceptions:
+        - org.springframework.web.client.HttpServerErrorException
+        - java.util.concurrent.TimeoutException
+        - java.io.IOException
+        - java.lang.RuntimeException
+      ignoreExceptions:
+        - ru.otus.work35.exceptions.BusinessException
+        - ru.otus.work35.exceptions.AlreadyExistException
+    shared:
+      slidingWindowSize: 100
+      permittedNumberOfCallsInHalfOpenState: 30
+      waitDurationInOpenState: 1s
+      failureRateThreshold: 50
+      eventConsumerBufferSize: 10
+      ignoreExceptions:
+        - ru.otus.work35.exceptions.BusinessException
+        - ru.otus.work35.exceptions.AlreadyExistException
+  instances:
+    ServiceController:
+      baseConfig: default
+    AuthorController:
+      registerHealthIndicator: true
+      slidingWindowSize: 10
+      minimumNumberOfCalls: 10
+      permittedNumberOfCallsInHalfOpenState: 3
+      waitDurationInOpenState: 5s
+      failureRateThreshold: 50
+      eventConsumerBufferSize: 10
+      recordFailurePredicate: ru.otus.work35.exceptions.RecordFailurePredicate
+resilience4j.retry:
+  configs:
+    default:
+      maxRetryAttempts: 3
+      waitDuration: 100
+      retryExceptions:
+        - org.springframework.web.client.HttpServerErrorException
+        - java.util.concurrent.TimeoutException
+        - java.io.IOException
+      ignoreExceptions:
+        - ru.otus.work35.exceptions.BusinessException
+        - ru.otus.work35.exceptions.AlreadyExistException
+  instances:
+    ServiceController:
+      baseConfig: default
+    AuthorController:
+      baseConfig: default
+    GenreController:
+      baseConfig: default
+    BookController:
+      baseConfig: default
+resilience4j.bulkhead:
+  configs:
+    default:
+      maxConcurrentCalls: 100
+  instances:
+    ServiceController:
+      maxConcurrentCalls: 10
+    AuthorController:
+      maxWaitDuration: 10ms
+      maxConcurrentCalls: 20
+    GenreController:
+      maxWaitDuration: 10ms
+      maxConcurrentCalls: 20
+    BookController:
+      baseConfig: default
+resilience4j.thread-pool-bulkhead:
+  configs:
+    default:
+      maxThreadPoolSize: 4
+      coreThreadPoolSize: 2
+      queueCapacity: 2
+  instances:
+    ServiceController:
+      baseConfig: default
+    AuthorController:
+      maxThreadPoolSize: 1
+      coreThreadPoolSize: 1
+      queueCapacity: 1
+    GenreController:
+      maxThreadPoolSize: 1
+      coreThreadPoolSize: 1
+      queueCapacity: 1
+    BookController:
+      baseConfig: default
+resilience4j.ratelimiter:
+  configs:
+    default:
+      registerHealthIndicator: false
+      limitForPeriod: 10
+      limitRefreshPeriod: 1s
+      timeoutDuration: 0
+      eventConsumerBufferSize: 100
+  instances:
+    ServiceController:
+      baseConfig: default
+    AuthorController:
+      limitForPeriod: 1
+      limitRefreshPeriod: 1s
+      timeoutDuration: 3s
+    GenreController:
+      limitForPeriod: 1
+      limitRefreshPeriod: 1s
+      timeoutDuration: 3s
+    BookController:
+      baseConfig: default
+resilience4j.timelimiter:
+  configs:
+    default:
+      cancelRunningFuture: false
+      timeoutDuration: 2s
+  instances:
+    ServiceController:
+      baseConfig: default
+    AuthorController:
+      cancelRunningFuture: true
+      timeoutDuration: 2s
+    GenreController:
+      cancelRunningFuture: true
+      timeoutDuration: 2s
+    BookController:
+      cancelRunningFuture: true
+      timeoutDuration: 2s

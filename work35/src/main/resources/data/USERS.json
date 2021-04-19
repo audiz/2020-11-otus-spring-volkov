@@ -1,0 +1,2 @@
+{"_id":{"$numberLong":"1"},"username":"user","password":"user","roles": ["ADMIN"],"_class":"ru.otus.work17.domain.User"}
+{"_id":{"$numberLong":"2"},"username":"admin","password":"admin","roles": ["ADMIN"],"_class":"ru.otus.work17.domain.User"}
