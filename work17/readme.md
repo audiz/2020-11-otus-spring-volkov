@@ -1,14 +1,10 @@
-ереписать приложение с использованием AJAX и REST-контроллеров
-Цель: Цель: использовать Spring MVC для разработки современных AJAX/SPA приложений c помощью Spring MVC
-Результат: современное приложение на стеке Spring
-Домашнее задание выполняется на основе предыдущего.
+Rewrite the application using AJAX and REST controllers
+Goal: use Spring MVC to develop modern AJAX / SPA applications using Spring MVC
+Result: a modern application on the Spring stack
+The homework assignment is based on the previous one.
 
-1. Переписать приложение с классических View на AJAX архитектуру и REST-контроллеры.
-2. Минимум: получение одной сущности и отображение её на странице с помощью XmlHttpRequest, fetch api или jQuery
-3. Опционально максимум: полноценное SPA приложение на React/Vue/Angular, только REST-контроллеры.
+1. Rewrite the application from the classic View to the AJAX architecture and REST controllers.
+2. Minimum: getting one entity and displaying it on the page using XMLHttpRequest, fetch api, or jQuery
+3. Optional maximum: full-fledged SPA application on React/Vue/Angular, only REST controllers.
 
-В случае разработки SPA - рекомендуется вынести репозиторий с front-end. Используйте proxy при разработке (настройки CORS не должно быть).
-
-Данное задание, выполненное в виде SPA засчитывает ДЗ №9 (Занятие №15).
-Если Вы хотите засчитать, то обязательно пришлите ссылку в чат соответствующего предыдущего занятия.
-
+In the case of SPA development, it is recommended to move the repository from the front-end. Use a proxy when developing (there should be no CORS settings).

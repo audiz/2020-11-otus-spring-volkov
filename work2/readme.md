@@ -1,18 +1,18 @@
-риложение по проведению тестирования студентов (с самим тестированием)
-Цель: Цель: конфигурировать Spring-приложения современным способом, как это и делается в современном мире
-Результат: готовое современное приложение на чистом Spring
-Новый функционал:
+Application for testing students (with testing itself)
+Purpose: to configure Spring applications in a modern way, as it is done in the modern world
+The result: a ready-made modern application on pure Spring
+New functionality:
 
-Программа должна спросить у пользователя фамилию и имя, спросить 5 вопросов из CSV-файла и вывести результат тестирования.
+The program should ask the user's last name and first name, ask 5 questions from the CSV file, and output the test result.
 
-Выполняется на основе предыдущего домашнего задания + , собственно, сам функционал тестирования.
+It is performed on the basis of the previous homework+, in fact, the testing functionality itself.
 
-Требования:
-1. Переписать конфигурацию в виде Java + Annotation-based конфигурации.
-2. Добавить функционал тестирования студента.
-3. Добавьте файл настроек для приложения тестирования студентов.
-4. В конфигурационный файл можно поместить путь до CSV-файла, количество правильных ответов для зачёта - на Ваше усмотрение.
-5. Если Вы пишите интеграционные тесты, то не забудьте добавить аналогичный файл и для тестов.
-6. Scanner, PrintStream и другие стандартные типы в контекст класть не нужно!
-7. Ввод-вывод на английском языке.
-8. Помним, "без фанатизма" :)
+Requirements:
+1. Rewrite the configuration as a Java + Annotation-based configuration.
+2. Add student testing functionality.
+3. Add the settings file for the student testing app.
+4. In the configuration file, you can put the path to the CSV file, the number of correct answers for the test is at your discretion.
+5. If you are writing integration tests, do not forget to add a similar file for the tests.
+6. Scanner, PrintStream and other standard types do not need to be put in the context!
+7. Write in English.
+8. Remember, " without fanaticism" :)

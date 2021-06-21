@@ -1,6 +1,5 @@
-Волков Артем Андреевич
-Курс: Разработчик на Spring Framework
-Период обучения: 24 ноября — 29 мая 2021 года
+Artem Volkov
+Course: Developer on the Spring Framework
+Training period: November 24 — May 29, 2021
 
- 2020-11-otus-spring-volkov
-
+2020-11-otus-spring-volkov

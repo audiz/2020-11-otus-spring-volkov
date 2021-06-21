@@ -1,10 +1,10 @@
-Использовать WebFlux
-Цель: Цель: разрабатывать Responsive и Resilent приложения на реактивном стеке Spring c помощью Spring Web Flux и Reactive Spring Data Repositories
-Результат: приложение на реактивном стеке Spring
-1. За основу для выполнения работы можно взять ДЗ с Ajax + REST (классическое веб-приложение для этого луче не использовать).
-2. Но можно выбрать другую доменную модель (не библиотеку).
-3. Необходимо использовать Reactive Spring Data Repositories.
-4. В качестве БД лучше использовать MongoDB или Redis. Использовать PostgreSQL и экспериментальную R2DBC не рекомендуется.
-5. RxJava vs Project Reactor - на Ваш вкус.
-6. Вместо классического Spring MVC и embedded Web-сервера использовать WebFlux.
-7. Опционально: реализовать на Functional Endpoints
+Use WebFlux
+Goal: Goal: Develop Responsive and Resilient applications on the Spring reactive stack using Spring Web Flux and Reactive Spring Data Repositories
+Result: application on the Spring reactive stack
+1. As a basis for performing the work, you can take a DZ with Ajax + REST (it is better not to use a classic web application for this).
+2. But you can choose a different domain model (not a library).
+3. You must use the Reactive Spring Data Repositories.
+4. It is better to use MongoDB or Redis as a database. It is not recommended to use PostgreSQL and experimental R2DBC.
+5. RxJava vs Project Reactor-to your taste.
+6. Instead of the classic Spring MVC and embedded Web server, use WebFlux.
+7. Optional: Implement on Functional Endpoints

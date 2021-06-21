@@ -1,9 +1,8 @@
-Домашнее задание
-На основе Spring Batch разработать процедуру миграции данных из реляционного хранилища в NoSQL или наоборот
-Цель: Цель: мигрировать данные с помощью Spring Batch
-Результат: приложение для пакетных обработок данных на Spring Batch
-1. Задание может быть выполнено в отдельном репозитории, с сущностями из ДЗ JPA и MongoDB.
-2. Вы можете выбрать другую доменную модель
-3. Не обязательно добавлять процесс миграции в веб-приложение. Приложение может быть оформлено в виде отдельной утилиты.
-3. Используя Spring Batch, следите, чтобы связи сущностей сохранились.
-4. Опционально: Сделать restart задачи с помощью Spring Shell.
+Develop a procedure for migrating data from relational storage to NoSQL or vice versa based on Spring Batch
+Goal: Migrate data using Spring Batch
+Result: application for batch processing of data on Spring Batch
+1. The task can be performed in a separate repository, with entities from the JPA and MongoDB home work.
+2. You can choose a different domain model
+3. It is not necessary to add the migration process to the web application. The application can be designed as a separate utility.
+3. Using Spring Batch, make sure that the entity relationships are preserved.
+4. Optional: Do restart tasks using Spring Shell.

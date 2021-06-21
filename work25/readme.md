@@ -1,16 +1,14 @@
-Домашнее задание
-Ввести авторизацию на основе URL и/или доменных сущностей
-Цель: Цель: научиться защищать приложение с помощью полноценной авторизации и разграничением прав доступа
-Результат: полноценное приложение с безопасностью на основе Spring Security
-Внимание! Задание выполняется на основе нереактивного приложения Sping MVC!
+Enter authorization based on URL and / or domain entities
+Goal: learn how to protect the application with full authorization and access rights differentiation
+The result: a full-fledged application with security based on Spring Security
+Attention! The task is based on a non-active Sping MVC application!
 
-1. Минимум: настроить в приложении авторизацию на уровне URL.
-2. Максимум: настроить в приложении авторизацию на основе доменных сущностей и методов сервиса.
+1. Minimum: configure URL-level authorization in the app.
+2. Maximum: configure in-app authorization based on domain entities and service methods.
 
-Рекомендации по выполнению:
-1. Не рекомендуется выделять пользователей с разными правами в разные классы - т.е. просто один класс пользователя.
-2. В случае авторизации на основе доменных сущностей и PostgreSQL не используйте GUID для сущностей.
-
+Recommendations for implementation:
+1. It is not recommended to allocate users with different rights to different classes - that is, just one user class.
+2. In the case of authorization based on domain entities and PostgreSQL, do not use the GUID for entities.
 
 ACL with Mongo
 https://github.com/RovoMe/spring-security-acl-mongodb

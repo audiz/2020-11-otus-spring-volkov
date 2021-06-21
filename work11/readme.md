@@ -1,11 +1,10 @@
-Домашнее задание
-Библиотеку на Spring Data JPA
-Цель: Цель: максимально просто писать слой репозиториев с применением современных подходов
-Результат: приложение со слоем репозиториев на Spring Data JPA
-Домашнее задание выполняется переписыванием предыдущего на JPA.
+A library based on Spring Data JPA
+Goal: as simple as possible to write a repository layer using modern approaches
+Result: an application with a repository layer on Spring Data JPA
+The homework is done by rewriting the previous one in JPA.
 
-Требования:
-1. Переписать все репозитории по работе с книгами на Spring Data JPA репозитории.
-2. Используйте spring-boot-starter-data-jpa.
-3. Кастомные методы репозиториев (или с хитрым @Query) покрыть тестами, используя H2.
-4. @Transactional рекомендуется ставить на методы сервисов, а не репозиториев.
+Requirements:
+1. Rewrite all the repositories for working with books to Spring Data JPA repositories.
+2. Use spring-boot-starter-data-jpa.
+3. Custom repository methods (or with the tricky @Query) to cover with tests using H2.
+4. @Transactional is recommended to put on the methods of services, not repositories.

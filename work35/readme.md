@@ -1,11 +1,7 @@
-Домашнее задание
+Wrap external calls in Hystrix
 
-Обернуть внешние вызовы в Hystrix
-Цель:
+Goal: to make external calls to the application error-resistant Result: an application with isolated external calls using Hystrix
 
-Цель: сделать внешние вызовы приложения устойчивыми к ошибкам Результат: приложение с изолированными с помощью Hystrix внешними вызовами
-
-Обернуть все внешние вызовы в Hystrix, Hystrix Javanica.
-Возможно использование Resilent4j
-Возможно использование Feign Client Опционально: Поднять Turbine Dashboard для мониторинга.
-
+Wrap all external calls in Hystrix, Hystrix Javanica.
+It is possible to use Resilent4j
+You can use the Feign Client Optionally: Raise the Turbine Dashboard for monitoring.

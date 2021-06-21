@@ -1,17 +1,15 @@
-Домашнее задание
-Создать приложение хранящее информацию о книгах в библиотеке
-Цель: Цель: использовать возможности Spring JDBC и spring-boot-starter-jdbc для подключения к реляционным базам данных
-Результат: приложение с хранением данных в реляционной БД, которое в дальнейшем будем развивать
-Это домашнее задание выполняется НЕ на основе предыдущего.
+Create an application that stores information about books in the library
+Goal: use the capabilities of Spring JDBC and spring-boot-starter-jdbc to connect to relational databases
+Result: an application with data storage in a relational database, which we will develop in the future
+This homework assignment is NOT based on the previous one.
 
-1. Использовать Spring JDBC и реляционную базу (H2 или настоящую реляционную БД). Настоятельно рекомендуем использовать NamedParametersJdbcTemplate
-2. Предусмотреть таблицы авторов, книг и жанров.
-3. Предполагается отношение многие-к-одному (у книги один автор и жанр). Опциональное усложнение - отношения многие-ко-многим (у книги может быть много авторов и/или жанров).
-4. Интерфейс выполняется на Spring Shell (CRUD книги обязателен, операции с авторами и жанрами - как будет удобно).
-5. Скрипт создания таблиц и скрипт заполнения данными должны автоматически запускаться
-с помощью spring-boot-starter-jdbc.
-6. Покрыть тестами, насколько это возможно.
+1. Use Spring JDBC and a relational database (H2 or a real relational database). We strongly recommend using NamedParametersJdbcTemplate
+2. Provide tables of authors, books, and genres.
+3. The many-to-one relationship is assumed (the book has the same author and genre). Optional complication - many-to-many relationships (a book can have many authors and / or genres).
+4. The interface is executed on the Spring Shell (CRUD books are required, operations with authors and genres - as it will be convenient).
+5. The script for creating tables and the script for filling in data should be automatically started using spring-boot-starter-jdbc.
+6. Cover with tests as much as possible.
 
-Рекомендации к выполнению работы:
-1. НЕ делать AbstractDao.
-2. НЕ делать наследования в тестах
+Recommendations for the implementation of the work:
+1. DON'T do AbstractDAO.
+2. DON'T do inheritance in tests

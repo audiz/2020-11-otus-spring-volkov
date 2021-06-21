@@ -11,7 +11,7 @@
 	<groupId>ru.otus</groupId>
 	<artifactId>work23</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>work17</name>
+	<name>work23</name>
 	<description>Home work for Spring Boot</description>
 
 	<properties>

@@ -1,15 +1,12 @@
-Домашнее задание
+Wrap the app in a docker container
 
-Обернуть приложение в docker-контейнер
-Цель:
+Goal: deploy the application in a modern DevOps stack Result: application wrapper in Docker
 
-Цель: деплоить приложение в современном DevOps-стеке Результат: обёртка приложения в Docker
+Attention! The task is performed on the basis of any Web application made
 
-Внимание! Задание выполняется на основе любого сделанного Web-приложения
-
-Обернуть приложение в docker-контейнер. Dockerfile принято располагать в корне репозитория. 
-В image должна попадать JAR-приложения. Сборка в контейнере рекомендуется, но не обязательна.
-БД в собственный контейнер оборачивать не нужно (если только Вы не используете кастомные плагины)
-Настроить связь между контейнерами, с помощью docker-compose
-Опционально: сделать это в локальном кубе.
-Приложение желательно реализовать с помощью всех Best Practices Docker (логгирование в stdout и т.д.)
+Wrap the application in a docker container. Dockerfile is usually located in the root of the repository.
+The image must include JAR applications. Building in a container is recommended, but not required.
+You don't need to wrap the database in your own container (unless you use custom plugins)
+Configure communication between containers, using docker-compose
+Optional: do this in a local cube.
+It is desirable to implement the application using all the Best Practices of Docker (logging in stdout, etc.)

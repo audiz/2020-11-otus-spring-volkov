@@ -4,17 +4,12 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
-import org.springframework.hateoas.Link;
 import org.springframework.web.bind.annotation.*;
-import ru.otus.work17.domain.Author;
 import ru.otus.work17.domain.Book;
-import ru.otus.work17.domain.Comment;
-import ru.otus.work17.domain.Genre;
 import ru.otus.work17.exceptions.AlreadyExistException;
 import ru.otus.work17.exceptions.NotFoundException;
 import ru.otus.work17.repositories.AuthorRepository;
 import ru.otus.work17.repositories.BookRepository;
-import ru.otus.work17.repositories.CommentRepository;
 import ru.otus.work17.repositories.GenreRepository;
 import ru.otus.work17.service.SequenceGeneratorService;
 
