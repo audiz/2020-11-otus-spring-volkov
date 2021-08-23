@@ -7,3 +7,5 @@ Attention! The task is based on a non-active Sping MVC application!
 2. Add a Form-based authentication mechanism to the existing CRUD application.
 3. Implement UsersServices yourself.
 4. Authorization on all pages - for all authenticated ones. Login form-available to everyone.
+
+Homework score - 8/10

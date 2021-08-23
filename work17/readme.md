@@ -8,3 +8,5 @@ The homework assignment is based on the previous one.
 3. Optional maximum: full-fledged SPA application on React/Vue/Angular, only REST controllers.
 
 In the case of SPA development, it is recommended to move the repository from the front-end. Use a proxy when developing (there should be no CORS settings).
+
+Homework score - 10/10

@@ -6,3 +6,5 @@ Result: application for batch processing of data on Spring Batch
 3. It is not necessary to add the migration process to the web application. The application can be designed as a separate utility.
 3. Using Spring Batch, make sure that the entity relationships are preserved.
 4. Optional: Do restart tasks using Spring Shell.
+
+Homework score - 10/10

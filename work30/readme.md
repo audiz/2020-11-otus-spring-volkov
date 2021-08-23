@@ -10,3 +10,5 @@ This task is performed on the basis of one of the implemented Web applications
     You don't need to implement the UI for data from Spring Boot Actuator.
 
 Optional: rewrite the application on HATEOAS principles using the Spring Data REST Repository
+
+Homework score - 9/10

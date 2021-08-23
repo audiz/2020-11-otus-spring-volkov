@@ -16,3 +16,5 @@ Requirements:
 6. Scanner, PrintStream and other standard types do not need to be put in the context!
 7. Write in English.
 8. Remember, " without fanaticism" :)
+
+Homework score - 8/10

@@ -15,3 +15,5 @@ Write Unit tests using spring-boot-starter-test, take into account that Spring S
 The set of commands depends only on your desire. You can make a single command that runs your Main, or you can build a full-fledged interface on the Spring Shell.
 
 You DO NOT NEED to localize Spring Shell commands (although you can, but it is long and difficult).
+
+Homework score - 10/10

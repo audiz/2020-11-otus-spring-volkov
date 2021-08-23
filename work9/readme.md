@@ -10,3 +10,5 @@ Requirements:
 4. Cover the repositories with tests, using the H2 database and the corresponding H2 Hibernate dialect for the tests.
 5. Don't forget to disable DDL via Hibernate
 6. @Transactional is recommended to put only on the methods of the service.
+
+Homework score - 8/10

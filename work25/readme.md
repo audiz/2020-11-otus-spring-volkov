@@ -12,3 +12,5 @@ Recommendations for implementation:
 
 ACL with Mongo
 https://github.com/RovoMe/spring-security-acl-mongodb
+
+Homework score - 10/10

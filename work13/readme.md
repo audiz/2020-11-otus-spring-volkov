@@ -8,3 +8,5 @@ Requirements:
 2. Tests can be implemented using Flapdoodle Embedded MongoDB
 3. Hibernate, as well as JPA, and spring-boot-starter-data-jpa should not remain in dependencies if the home work is executed based on the previous one.
 4. How to store books, authors, genres, and comments is up to you. But the structure transferred from the relational database will not always be suitable for MongoDB.
+
+Homework score - 10/10

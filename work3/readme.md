@@ -16,3 +16,5 @@ Migrate tests and use spring-boot-test-starter for testing
 
 use ANSI colors for the banner.
 if your language is different from Russian and English - localize it.
+
+Homework score - 10/10

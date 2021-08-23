@@ -10,3 +10,5 @@ You don't need to wrap the database in your own container (unless you use custom
 Configure communication between containers, using docker-compose
 Optional: do this in a local cube.
 It is desirable to implement the application using all the Best Practices of Docker (logging in stdout, etc.)
+
+Homework score - 9/10

@@ -13,3 +13,5 @@ This homework assignment is NOT based on the previous one.
 Recommendations for the implementation of the work:
 1. DON'T do AbstractDAO.
 2. DON'T do inheritance in tests
+
+Homework score - 9/10

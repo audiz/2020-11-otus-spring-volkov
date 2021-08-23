@@ -8,3 +8,5 @@ Result: application on the Spring reactive stack
 5. RxJava vs Project Reactor-to your taste.
 6. Instead of the classic Spring MVC and embedded Web server, use WebFlux.
 7. Optional: Implement on Functional Endpoints
+
+Homework score - 10/10

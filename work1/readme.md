@@ -21,3 +21,5 @@ Requirements:
 
 Optional (task with "star"):
 1*. The application must be launched correctly using " java-jar"
+
+Homework score - 9/10

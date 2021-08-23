@@ -6,3 +6,5 @@ Necessary:
 2. Use the classic View on Thymeleaf, classic Controllers.
 3. For books (the main entity), all CRUD operations must be available on the UI. CRUD of other entities - optional/necessary.
 4. Localization is NOT necessary - it is strictly optional.
+
+Homework score - 9/10

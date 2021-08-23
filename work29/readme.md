@@ -9,3 +9,5 @@ Participants will be able to "integrate" parts of the application using EIP Resu
     It is advisable to use MessagingGateway and subfolw (if necessary).
 
 The task is running in a different repository/folder.
+
+Homework score - 8/10

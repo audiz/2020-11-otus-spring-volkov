@@ -8,3 +8,5 @@ Requirements:
 2. Use spring-boot-starter-data-jpa.
 3. Custom repository methods (or with the tricky @Query) to cover with tests using H2.
 4. @Transactional is recommended to put on the methods of services, not repositories.
+
+Homework score - 10/10
